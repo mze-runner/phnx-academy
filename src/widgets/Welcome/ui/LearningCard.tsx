@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Card, CardActionArea, CardMedia, Typography, CardContent, CardActions, Button } from '@mui/material';
+import { Card, CardMedia, Typography, CardContent, CardActions, Button, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 interface LearningCardProps {
@@ -13,7 +13,6 @@ const LearningCard: FC<LearningCardProps> = ({ img, header, body, link } ) => {
 
 	const navigate = useNavigate();
 	const onActionButtonClick = () => {
-		// TODO: navigate to the page
 		navigate(link);
 	};
 	
@@ -29,11 +28,13 @@ const LearningCard: FC<LearningCardProps> = ({ img, header, body, link } ) => {
 				<Typography gutterBottom variant="h5" component="div">{header}</Typography>
 				<Typography variant="body2" color="text.secondary">{body}</Typography>
 			</CardContent>
-			<CardActions sx={{ justifyContent: 'center' }}>
-				<Button onClick={onActionButtonClick} size="medium" color="primary">
+			<Box sx={{ marginTop: 'auto !important' }}>
+				<CardActions sx={{ justifyContent: 'center' }}>
+					<Button onClick={onActionButtonClick} size="medium" color="primary">
 					Open
-				</Button>
-			</CardActions>
+					</Button>
+				</CardActions>
+			</Box>
 		</Card>);
 };
 

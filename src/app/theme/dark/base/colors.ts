@@ -1,4 +1,4 @@
-import { PaletteOptions } from "@mui/material/styles/createPalette";
+import { PaletteOptions } from '@mui/material/styles/createPalette';
 
 const colors : PaletteOptions = {
 	// general

@@ -6,8 +6,8 @@ import './base/styles';
 import colors from './base/colors';
 
 export default createTheme({
-	// palette: { ...colors, mode: 'dark' },
-	palette: { mode: 'dark' },
+	palette: { ...colors, mode: 'dark' },
+	// palette: { mode: 'dark' },
 	typography: {
 		fontSize: 14,
 	},

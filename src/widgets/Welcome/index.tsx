@@ -11,6 +11,12 @@ const useStateCards = [
 		body: 'Basics of useState hook. How to add to the functional component and update the state of the component.',
 		link: '/useState/example01'
 	},
+	{
+		header: 'useState Basics (Counter)',
+		img: 'card_sample.jpg',
+		body: 'Basics counter with help of useState hook.',
+		link: '/useState/example02'
+	},
 ];
 
 const WelcomeWidget: FC = () => {
