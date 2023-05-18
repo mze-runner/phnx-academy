@@ -52,6 +52,14 @@ const Todo: FC = () => {
 		dispatch({ type: 'add', payload: { name: 'new item' }});
 	};
 
+	const handleOnClickDelete = (id: number) => {
+		dispatch({ type: 'delete', payload: { id }});
+	};
+
+	const handleOnClickToggle = (id: number) => {
+		dispatch({ type: 'delete', payload: { id }});
+	};
+
 	return (
 		<>
             useReducer example
