@@ -25,12 +25,19 @@ type ReducerAction = {
 
 const reduceFn = (state: Item[], action: ReducerAction): Item[] => {
 	switch (action.type) {
-	case 'add':
-		return state;
+	case 'add': {
+		const newItem: Item = {id: new Date().getMilliseconds(), name: action.payload.name, isActive: true};
+		return state.concat(newItem);
+	}
 	case 'toggle':
-		return state;
+		return state.map( (el) => {
+			if (el.id === action.payload.id) {
+				return {id: el.id, name: el.name, isActive: !el.isActive };
+			}
+			return el;
+		});
 	case 'delete':
-		return state;
+		return state.filter( (el) => el.id !== action.payload.id );
 	default:
 		return state;
 	}
