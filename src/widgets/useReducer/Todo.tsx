@@ -1,4 +1,5 @@
 import React, { FC, useReducer, Reducer }  from 'react';
+import { Button } from '@mui/material';
 
 interface Item {
 	id: number;
@@ -47,9 +48,14 @@ const Todo: FC = () => {
 
 	const [ state, dispatch ] = useReducer<Reducer<Item[], ReducerAction>>(reduceFn, []);
 
+	const handleOnClickAdd = () => {
+		dispatch({ type: 'add', payload: { name: 'new item' }});
+	};
+
 	return (
 		<>
-            useReducer
+            useReducer example
+			<Button onClick={handleOnClickAdd}>Add</Button>
 		</>
 	);
 };
